@@ -1,6 +1,15 @@
 <app-background></app-background>
 <app-navbar></app-navbar>
+
 <div style="padding-top: 80px;">
-  <!-- Your content below navbar -->
+  <div class="welcome-modal" *ngIf="showWelcome" (click)="onOverlayClick($event)">
+    <div class="welcome-box">
+      <img src="arun_full.jpg" alt="Arun" class="pic" />
+      <h2>👋 Hello !</h2>
+      <p>I'm <strong>Arun R</strong> — A Passionate Software Developer.</p>
+      <button (click)="closeWelcome()">Let’s Go 🚀</button>
+    </div>
+  </div>
 </div>
+
 <router-outlet></router-outlet>
