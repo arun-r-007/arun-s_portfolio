@@ -1,0 +1,133 @@
+.vanta-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+
+
+ .switch-container{
+  position: absolute;
+  top: 5%;
+  right: 1%;
+  z-index: 10;
+  border-radius: 3.125em;
+  transform: rotate(90deg);
+  box-shadow: 0 .125em .25em rgba(0, 0, 0, .2);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.switch-input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switch-button {
+  display: inline-flex;
+  padding: 0 .375em;
+  border-radius: inherit;
+  border: .0625em solid #6b717b;
+  background-color: #aaafbb;
+  box-shadow: inset 0 0 .5em rgba(0, 0, 0, .4);
+  transition: border-color .2s, background-color .2s;
+}
+
+.switch-input:checked + .switch-button {
+  border-color: #43316f;
+  background-color: #7550d9;
+}
+
+.switch-button-inside {
+  display: inline-flex;
+  column-gap: 1em;
+  position: relative;
+  border-radius: inherit;
+  padding: .75em;
+  transform: translateX(-.375em);
+  background-image: linear-gradient(90deg, #c5c9d3 48%, #d5d7dd 52%);
+  box-shadow: 
+    inset .0625em 0 .0625em rgba(255, 255, 255, .4),
+    inset -.0625em 0 .0625em rgba(255, 255, 255, .4);
+  transition: transform .2s;
+}
+
+.switch-input:checked + .switch-button > .switch-button-inside {
+  transform: translateX(.375em);
+}
+
+.switch-input:checked + .switch-button > .switch-button-inside::after {
+  opacity: 1;
+}
+
+.switch-button-inside::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background-image: linear-gradient(90deg, #926afe 48%, #885bff 52%);
+  box-shadow: 
+    inset .0625em 0 .0625em rgba(255, 255, 255, .2),
+    inset -.0625em 0 .0625em rgba(255, 255, 255, .2);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.switch-icon {
+  width: 1em;
+  height: 1em;
+  fill: #fff;
+  filter: 
+    drop-shadow(0 .0625em .0625em rgba(0, 0, 0, .4))
+    drop-shadow(0 0 .25em rgba(255, 255, 255, .4))
+    drop-shadow(0 0 .25em rgba(255, 255, 255, .4));
+  transition: fill .2s;
+}
+
+.switch-icon.off {
+  fill: #fff;
+}
+
+.switch-input:checked + .switch-button .switch-icon.off {
+  fill: #704ccf;
+  filter: none;
+}
+
+.switch-input:not(:checked) + .switch-button .switch-icon.on {
+  fill: #767c86;
+  filter: none;
+}
+
+
+
+@media (max-width: 600px) {
+  .switch-container {
+    transform: rotate(90deg) scale(0.75); /* scale down */
+    top: 3%;
+    right: 1%;
+  }
+
+  .switch-button {
+    padding: 0 .25em;
+  }
+
+  .switch-button-inside {
+    padding: 0.5em;
+    column-gap: 0.5em;
+  }
+
+  .switch-icon {
+    width: 0.75em;
+    height: 0.75em;
+  }
+}
