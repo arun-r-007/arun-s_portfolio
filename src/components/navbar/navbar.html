@@ -1,7 +1,15 @@
 <nav class="navbar">
   <div class="navbar-container">
+    <!-- <div class="logo">
+      <a routerLink="/" (click)="menuOpen = false">
+        <img src="arun_or.jpeg" alt="Arun R Logo" class="logo-img" />
+      </a>
+    </div> -->
+
     <div class="logo">
-        <img src="arun.png" alt="Arun R Logo" class="logo-img" />
+      <a routerLink="/" (click)="menuOpen = false">
+        <p class="logo-initial">𝓐𝓻</p>
+      </a>
     </div>
 
     <button class="menu-toggle" 
@@ -12,33 +20,33 @@
 
     <ul class="nav-links" [class.active]="menuOpen">
       <li>
-        <a href="#">
-            <img src="creator.png" alt="creator icon" class="nav-icon" />
-            Meet the creator
+        <a routerLink="/creator" (click)="menuOpen = false">
+          <img src="creator.png" class="nav-icon" alt="creator icon" />
+          Meet the creator
         </a>
       </li>
       <li>
-        <a href="#">
-            <img src="journey.png" alt="journey icon" class="nav-icon" />
-            Journey
+        <a routerLink="/journey" (click)="menuOpen = false">
+          <img src="journey.png" class="nav-icon" alt="journey icon" />
+          Journey
         </a>
       </li>
       <li>
-        <a href="#">
-            <img src="project.png" alt="project icon" class="nav-icon" />
-            Work speaks here
+        <a routerLink="/projects" (click)="menuOpen = false">
+          <img src="project.png" class="nav-icon" alt="project icon" />
+          Work speaks here
         </a>
       </li>
       <li>
-        <a href="#">
-            <img src="social1.png" alt="Social icon" class="nav-icon" />
-            Social
+        <a routerLink="/social" (click)="menuOpen = false">
+          <img src="social1.png" class="nav-icon" alt="social icon" />
+          Social
         </a>
       </li>
       <li>
-        <a href="#">
-            <img src="contact.png" alt="contact icon" class="nav-icon" />
-            Reach out to me
+        <a routerLink="/contact" (click)="menuOpen = false">
+          <img src="contact.png" class="nav-icon" alt="contact icon" />
+          Reach out to me
         </a>
       </li>
     </ul>

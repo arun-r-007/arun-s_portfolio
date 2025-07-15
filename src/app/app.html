@@ -1,15 +1,27 @@
 <app-background></app-background>
+<!-- <app-particles-background></app-particles-background> -->
 <app-navbar></app-navbar>
 
 <div style="padding-top: 80px;">
-  <div class="welcome-modal" *ngIf="showWelcome" (click)="onOverlayClick($event)">
+  <!-- <button (click)="openWelcome()" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);">
+    Wanna Fly?
+  </button> -->
+
+  <div class="welcome-modal" *ngIf="showWelcome" (click)="onOverlayClick($event)" (mousemove)="moveWelcome($event)">
     <div class="welcome-box">
+      <img src="wing-left-color.gif" class="wing-img wing-left" alt="left wing" />
+      <img src="wing-right-color.gif" class="wing-img wing-right" alt="right wing" />
       <img src="arun_full.jpg" alt="Arun" class="pic" />
-      <h2>👋 Hello !</h2>
+      <h2>👋 Hi !</h2>
       <p>I'm <strong>Arun R</strong> — A Passionate Software Developer.</p>
-      <button (click)="closeWelcome()">Let’s Go 🚀</button>
+      <button (click)="closeWelcome()">Let’s Explore&nbsp;&nbsp; ⌕ ⋆.˚</button>
     </div>
   </div>
 </div>
 
+
 <router-outlet></router-outlet>
+
+
+
+<!-- ⁀➴ -->

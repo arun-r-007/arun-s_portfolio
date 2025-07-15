@@ -8,6 +8,32 @@
 }
 
 
+.vanta-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.tooltip {
+  position: fixed;
+  background-color: #111;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px #000;
+  opacity: 0.95;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+
+
 
  .switch-container{
   position: absolute;
