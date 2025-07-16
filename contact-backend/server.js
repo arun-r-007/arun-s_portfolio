@@ -82,5 +82,5 @@ const userMailOptions = {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on http://localhost:${PORT}`);  // change the localhost link to deployable link
 });
