@@ -138,20 +138,21 @@ h3 {
     left: 35%;
   }
   .resume-download-top {
-    top: 3%;
+    top: 1.5%;
     right: 3%;
   }
 
   
 
   .resume-btn {
-    padding: 8px 14px;
-    font-size: 0.95rem;
+    padding: 6px 10px;
+    font-size: 0.85rem;
   }
 
   .profile-img {
     width: 130px;
     height: 130px;
+    top: 1%;
   }
 
   .bio {

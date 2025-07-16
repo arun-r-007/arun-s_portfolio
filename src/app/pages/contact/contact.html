@@ -1,1 +1,54 @@
-<p>contact works!</p>
+<div class="contact-container">
+
+  
+  <h2 style="color: #ffd700;">✉ Get In Touch</h2>
+  <p class="form-description" style="color: #ffd700;">
+    Have a question, feedback, or just want to say hello? Fill out the form below and I’ll get back to you soon!
+  </p>
+
+  
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" aria-label="Contact Form">
+
+    <input 
+      type="text" 
+      formControlName="name" 
+      placeholder="Your Name" 
+      aria-label="Your Name"
+    />
+
+    <input 
+      type="email" 
+      formControlName="email" 
+      placeholder="Your Email" 
+      aria-label="Your Email"
+    />
+
+    <input 
+      type="text" 
+      formControlName="subject" 
+      placeholder="Subject of Your Message" 
+      aria-label="Subject"
+    />
+
+    <textarea 
+      formControlName="message" 
+      placeholder="Type your message here..." 
+      rows="5"
+      aria-label="Message"
+    ></textarea>
+
+    <button type="submit" [disabled]="isLoading">
+      {{ isLoading ? 'Sending...' : 'Send Message' }}
+    </button>
+  </form>
+
+
+  <div *ngIf="successMessage" class="success">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="contact-container error">
+    {{ errorMessage }}
+  </div>
+
+
+</div>

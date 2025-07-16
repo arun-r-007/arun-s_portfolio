@@ -1,0 +1,152 @@
+.contact-container {
+  background-color: rgba(31, 31, 31, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  color: white;
+  font-family: 'Tektur', sans-serif;
+  animation: fadeInForm 0.7s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form Layout */
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input & Textarea */
+.contact-container input,
+.contact-container textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ffd700;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-container input::placeholder,
+.contact-container textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #fff200;
+  transform: scale(1.01);
+}
+
+/* Textarea specific */
+.contact-container textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
+}
+
+/* Button Styling */
+.contact-container button {
+  background-color: #ffd700;
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-container button:hover {
+  background-color: #e6c200;
+  transform: scale(1.03);
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Success & Error Message */
+.contact-container .success,
+.contact-container .error {
+  /* margin-top: 0.5rem; */
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
+  animation: fadeSlide 0.5s ease-in-out;
+}
+
+.contact-container .success {
+  color: #ffd700;
+}
+
+.contact-container .error {
+  color: #ffd700;
+}
+
+/* 🔶 Animations */
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔶 Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  .contact-container button {
+    font-size: 1rem;
+    padding: 0.7rem 1.3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-container {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .contact-container button {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+  }
+}
